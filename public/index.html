@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OctoFit Tracker - Social Fitness for Students</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">🐙 OctoFit Tracker</h1>
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="#activities" class="nav-link">Activities</a></li>
+                <li><a href="#teams" class="nav-link">Teams</a></li>
+                <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
+                <li><a href="#workouts" class="nav-link">Workouts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Login/Register Section -->
+        <section id="auth" class="section">
+            <div class="auth-container">
+                <h2>Welcome to OctoFit Tracker</h2>
+                <p>Join the fitness community and compete with your peers!</p>
+                
+                <div class="auth-forms">
+                    <div class="form-container">
+                        <h3>Register</h3>
+                        <form id="registerForm">
+                            <input type="text" id="regUsername" placeholder="Username" required>
+                            <input type="email" id="regEmail" placeholder="Email" required>
+                            <select id="regRole" required>
+                                <option value="">Select Role</option>
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                            <input type="text" id="regGrade" placeholder="Grade (for students)">
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+                    
+                    <div class="form-container">
+                        <h3>Login</h3>
+                        <form id="loginForm">
+                            <input type="text" id="loginUsername" placeholder="Username" required>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section hidden">
+            <h2>Dashboard</h2>
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <h3>Total Points</h3>
+                    <p class="stat-number" id="userPoints">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Activities Completed</h3>
+                    <p class="stat-number" id="userActivities">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Current Rank</h3>
+                    <p class="stat-number" id="userRank">-</p>
+                </div>
+            </div>
+            
+            <div class="user-info">
+                <h3>Profile Information</h3>
+                <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+                <p><strong>Role:</strong> <span id="profileRole"></span></p>
+                <p><strong>Grade:</strong> <span id="profileGrade"></span></p>
+                <p><strong>Member Since:</strong> <span id="profileJoinDate"></span></p>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities" class="section hidden">
+            <h2>Activity Tracking</h2>
+            
+            <div class="activity-form">
+                <h3>Log New Activity</h3>
+                <form id="activityForm">
+                    <select id="activityType" required>
+                        <option value="">Select Activity Type</option>
+                        <option value="running">Running</option>
+                        <option value="walking">Walking</option>
+                        <option value="cycling">Cycling</option>
+                        <option value="swimming">Swimming</option>
+                        <option value="strength">Strength Training</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                    <input type="number" id="activityDuration" placeholder="Duration (minutes)" required>
+                    <select id="activityIntensity" required>
+                        <option value="">Select Intensity</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button type="submit">Log Activity</button>
+                </form>
+            </div>
+            
+            <div class="activities-list">
+                <h3>Recent Activities</h3>
+                <div id="recentActivities"></div>
+            </div>
+        </section>
+
+        <!-- Teams Section -->
+        <section id="teams" class="section hidden">
+            <h2>Teams</h2>
+            
+            <div class="team-management">
+                <div class="create-team">
+                    <h3>Create New Team</h3>
+                    <form id="teamForm">
+                        <input type="text" id="teamName" placeholder="Team Name" required>
+                        <textarea id="teamDescription" placeholder="Team Description" required></textarea>
+                        <button type="submit">Create Team</button>
+                    </form>
+                </div>
+                
+                <div class="available-teams">
+                    <h3>Available Teams</h3>
+                    <div id="teamsList"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="section hidden">
+            <h2>Leaderboards</h2>
+            
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-tab="individual">Individual</button>
+                <button class="tab-btn" data-tab="teams">Teams</button>
+            </div>
+            
+            <div class="leaderboard-content">
+                <div id="individualLeaderboard" class="leaderboard-tab active">
+                    <h3>Top Students</h3>
+                    <div id="individualList"></div>
+                </div>
+                
+                <div id="teamsLeaderboard" class="leaderboard-tab">
+                    <h3>Top Teams</h3>
+                    <div id="teamsList"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workouts Section -->
+        <section id="workouts" class="section hidden">
+            <h2>Workout Suggestions</h2>
+            
+            <div class="workout-suggestions">
+                <h3>Recommended for You</h3>
+                <div id="personalizedWorkouts"></div>
+            </div>
+            
+            <div class="all-workouts">
+                <h3>All Available Workouts</h3>
+                <div id="allWorkouts"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

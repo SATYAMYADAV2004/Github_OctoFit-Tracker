@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1757417389307,
+    "username": "john_student",
+    "email": "john@school.edu",
+    "role": "student",
+    "grade": "10",
+    "joinDate": "2025-09-09T11:29:49.307Z",
+    "totalPoints": 59,
+    "activitiesCompleted": 1
+  },
+  {
+    "id": 1757417555883,
+    "username": "coach_smith",
+    "email": "coach.smith@school.edu",
+    "role": "teacher",
+    "grade": null,
+    "joinDate": "2025-09-09T11:32:35.883Z",
+    "totalPoints": 0,
+    "activitiesCompleted": 0
+  }
+]
