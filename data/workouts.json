@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Beginner Push-ups",
+    "type": "strength",
+    "duration": 10,
+    "difficulty": "easy",
+    "description": "Start with wall push-ups, progress to knee push-ups"
+  },
+  {
+    "id": 2,
+    "name": "Running Intervals",
+    "type": "cardio",
+    "duration": 20,
+    "difficulty": "medium",
+    "description": "Alternate between jogging and walking"
+  },
+  {
+    "id": 3,
+    "name": "Yoga Flow",
+    "type": "flexibility",
+    "duration": 15,
+    "difficulty": "easy",
+    "description": "Basic yoga poses for flexibility"
+  },
+  {
+    "id": 4,
+    "name": "Strength Circuit",
+    "type": "strength",
+    "duration": 30,
+    "difficulty": "hard",
+    "description": "Full body strength training circuit"
+  }
+]
